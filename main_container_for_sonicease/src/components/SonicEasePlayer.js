@@ -1,5 +1,8 @@
 import React from 'react';
 import LCDDisplay from './LCDDisplay';
+import MediaControls from './MediaControls';
+import SpeakerGrill from './SpeakerGrill';
+import ControlKnob from './ControlKnob';
 
 /**
  * SonicEasePlayer Component
@@ -9,15 +12,6 @@ import LCDDisplay from './LCDDisplay';
  * @returns {React.ReactElement} The SonicEase player UI
  */
 const SonicEasePlayer = () => {
-  // Generate speaker grill holes
-  const renderGrillHoles = (count) => {
-    const holes = [];
-    for (let i = 0; i < count; i++) {
-      holes.push(<div key={i} className="grill-hole"></div>);
-    }
-    return holes;
-  };
-
   return (
     <div className="stereo-container">
       <div className="stereo-frame">
@@ -35,26 +29,17 @@ const SonicEasePlayer = () => {
         <div className="stereo-controls">
           {/* Left side - speaker grill */}
           <div className="control-group left-controls">
-            <div className="speaker-grill">
-              {renderGrillHoles(48)}
-            </div>
+            <SpeakerGrill holeCount={48} />
           </div>
           
           {/* Center - media controls */}
           <div className="control-group center-controls">
-            <div className="media-controls">
-              <button className="stereo-button">◄◄</button>
-              <button className="stereo-button">■</button>
-              <button className="stereo-button">▶</button>
-              <button className="stereo-button">►►</button>
-            </div>
+            <MediaControls />
           </div>
           
           {/* Right side - speaker grill */}
           <div className="control-group right-controls">
-            <div className="speaker-grill">
-              {renderGrillHoles(48)}
-            </div>
+            <SpeakerGrill holeCount={48} />
           </div>
         </div>
         
@@ -65,12 +50,7 @@ const SonicEasePlayer = () => {
           marginTop: '15px'
         }}>
           {/* Volume knob */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div className="stereo-knob">
-              <div className="knob-marker"></div>
-            </div>
-            <div style={{ fontSize: '10px', marginTop: '5px' }}>VOLUME</div>
-          </div>
+          <ControlKnob label="VOLUME" />
           
           {/* Preset buttons */}
           <div style={{ display: 'flex', gap: '10px' }}>
@@ -81,12 +61,7 @@ const SonicEasePlayer = () => {
           </div>
           
           {/* Balance knob */}
-          <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <div className="stereo-knob">
-              <div className="knob-marker"></div>
-            </div>
-            <div style={{ fontSize: '10px', marginTop: '5px' }}>BALANCE</div>
-          </div>
+          <ControlKnob label="BALANCE" />
         </div>
       </div>
     </div>

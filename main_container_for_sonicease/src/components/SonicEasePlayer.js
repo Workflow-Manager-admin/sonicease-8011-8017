@@ -1,4 +1,5 @@
 import React from 'react';
+import LCDDisplay from './LCDDisplay';
 
 /**
  * SonicEasePlayer Component
@@ -23,15 +24,12 @@ const SonicEasePlayer = () => {
         <div className="power-light"></div>
         <div className="stereo-brand">SONIC EASE</div>
         
-        {/* Display section with LCD effect */}
-        <div className="stereo-display">
-          <div className="display-content">
-            <span className="segment">12:45</span>
-            <span className="segment"> PM</span>
-            {/* Display track info */}
-            <div className="track-info">TRACK 03 - CLASSIC HITS</div>
-          </div>
-        </div>
+        {/* LCD Display component */}
+        <LCDDisplay 
+          time="12:45"
+          period="PM"
+          trackInfo="TRACK 03 - CLASSIC HITS"
+        />
         
         {/* Controls section */}
         <div className="stereo-controls">

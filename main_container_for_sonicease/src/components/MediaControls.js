@@ -10,10 +10,10 @@ import React from 'react';
 const MediaControls = () => {
   return (
     <div className="media-controls">
-      <button className="stereo-button">◄◄</button>
-      <button className="stereo-button">■</button>
-      <button className="stereo-button">▶</button>
-      <button className="stereo-button">►►</button>
+      <button className="stereo-button" data-label="PREV">◄◄</button>
+      <button className="stereo-button" data-label="STOP">■</button>
+      <button className="stereo-button" data-label="PLAY">▶</button>
+      <button className="stereo-button" data-label="NEXT">►►</button>
     </div>
   );
 };

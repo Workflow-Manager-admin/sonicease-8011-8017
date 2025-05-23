@@ -3,6 +3,7 @@ import LCDDisplay from './LCDDisplay';
 import MediaControls from './MediaControls';
 import SpeakerGrill from './SpeakerGrill';
 import ControlKnob from './ControlKnob';
+import PresetButtons from './PresetButtons';
 
 /**
  * SonicEasePlayer Component
@@ -53,12 +54,7 @@ const SonicEasePlayer = () => {
           <ControlKnob label="VOLUME" />
           
           {/* Preset buttons */}
-          <div style={{ display: 'flex', gap: '10px' }}>
-            <button className="stereo-button">1</button>
-            <button className="stereo-button">2</button>
-            <button className="stereo-button">3</button>
-            <button className="stereo-button">4</button>
-          </div>
+          <PresetButtons count={4} />
           
           {/* Balance knob */}
           <ControlKnob label="BALANCE" />

@@ -1,0 +1,4 @@
+{
+    "command": "npm run test",
+    "working_directory": "/home/kavia/workspace/code-generation/sonicease-8011-8017/main_container_for_sonicease"
+}
